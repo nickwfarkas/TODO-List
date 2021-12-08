@@ -1,0 +1,61 @@
+table{
+    width: 98%;
+    text-align: center;
+    /* background-color: #808080;
+    border-radius: 10px;
+    overflow:hidden !important; */
+}
+
+.header{
+    width: 100%;
+    text-align: center;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 5em;
+    margin: auto;
+    color: #673AB7;
+}
+
+mat-header-row{
+    text-align: center;
+}
+
+.tableClass{
+    display: flex;
+    justify-content: center;
+}
+
+th.mat-header-cell, td.mat-cell { 
+    text-align: center; 
+}
+
+.filterClass{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+}
+
+.filterByDueDate{
+    margin: 10px;
+}
+
+.filterByCategory{
+    margin: 10px;
+}
+
+.filterBtn{
+    margin: 10px;
+}
+
+.main-btns{
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+}
+
+.btn{
+    margin: 10px;
+}

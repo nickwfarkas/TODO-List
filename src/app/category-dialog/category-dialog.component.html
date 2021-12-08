@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Create a new Category</h1>
+<div mat-dialog-content class="inputs">
+    <mat-form-field appearance="outline">
+        <mat-label>Category Name</mat-label>
+        <input matInput [formControl]="categoryFormControl" placeholder="ex. Homework">
+        <mat-error *ngIf="categoryFormControl.hasError('required')">
+            Category Name is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Parent Category</mat-label>
+        <mat-select [(ngModel)]="selectedCategory" name="food">
+          <mat-option *ngFor="let category of allCategories" [value]="category[0]">
+            {{category[1]}}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="sendNewCategory()" [disabled]="disableButton || !categoryFormControl.valid">Submit</button>
+</div>

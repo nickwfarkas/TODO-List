@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Delete a Category</h1>
+<div mat-dialog-content class="inputs">
+    <mat-form-field appearance="fill">
+        <mat-label>Categories</mat-label>
+        <mat-select [formControl]="categoryFormControl">
+        <mat-option *ngFor="let category of allCategories" [value]="category[0]">
+            {{category[1]}}
+        </mat-option>
+        </mat-select>
+        <mat-error *ngIf="categoryFormControl.hasError('required')">
+            Selection is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button (click)="deleteCategory()" [disabled]="disableButton || !categoryFormControl.valid">Submit</button>
+</div>
